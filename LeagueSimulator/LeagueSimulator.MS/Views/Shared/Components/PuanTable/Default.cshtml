@@ -1,0 +1,42 @@
+﻿@model LeagueSimulator.Data.ResponseModel.ReturnParameterModel<List<LeagueSimulator.Data.Entities.PuanTable>>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    @if (Model.Success == true)
+    {
+        <h3 class="text-center">European Super League Puan Table</h3>
+        <table class="table table-sm table-bordered table-hover mt-3">
+            <tr>
+                <th>Teams</th>
+                <th>Puan</th>
+                <th>Win</th>
+                <th>Draw</th>
+                <th>Lose</th>
+                <th>GS</th>
+                <th>GC</th>
+                <th>Averaj</th>
+            </tr>
+            @foreach (var item in Model.Model)
+            {
+                <tr>
+                    <td>@item.Teams.TeamName</td>
+                    <td>@item.Point</td>
+                    <td>@item.Win</td>
+                    <td>@item.Draw</td>
+                    <td>@item.Lose</td>
+                    <td>@item.GoalsScored</td>
+                    <td>@item.GoalsConceded</td>
+                    <td>@item.Averaj</td>
+
+
+
+                </tr>
+            }
+
+        </table>
+    }
+</body>
+</html>

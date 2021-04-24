@@ -1,0 +1,24 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="row">
+
+        <div class="col-md-8">
+            @await Component.InvokeAsync("PuanTable", new { week = ViewBag.week })
+        </div>
+        <div class="col-md-4">
+            @await Component.InvokeAsync("WeeklyResult", new { week = ViewBag.week })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 ">
+            <a asp-action="PlayAll" asp-controller="Home" class=" btn btn-warning">Play All</a>
+        </div>
+        <div  class="col-md-2">
+            <a asp-action="NextWeek" asp-controller="Home" class=" btn btn-info">Next Week</a>
+        </div>
+    </div>
+</body>
+</html>

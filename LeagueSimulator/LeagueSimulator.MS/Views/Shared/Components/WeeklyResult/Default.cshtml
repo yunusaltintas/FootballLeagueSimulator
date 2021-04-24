@@ -1,0 +1,36 @@
+﻿@model LeagueSimulator.Data.ResponseModel.ReturnParameterModel<List<LeagueSimulator.Data.Entities.WeeklyResult>>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    @if (Model.Success == true)
+    {
+        <h3 class="text-center">Match Results</h3>
+        <table class="table table-sm table-bordered table-hover mt-3">
+
+            <tr class="text-center">@(ViewBag.wweek). Week Match Result</tr>
+            <tr>
+                <th>Home Team</th>
+                <th>Goal</th>
+                <th>-</th>
+                <th>Goal</th>
+                <th>Away Team</th>
+            </tr>
+
+            @foreach (var item in Model.Model)
+            {
+                <tr>
+                    <td>@item.HomeTeamId</td>
+                    <td>@item.HomeTeamGoal</td>
+                    <td>-</td>
+                    <td>@item.AwayTeamGoal</td>
+                    <td>@item.AwayTeamId</td>
+                </tr>
+            }
+
+        </table>
+    }
+</body>
+</html>

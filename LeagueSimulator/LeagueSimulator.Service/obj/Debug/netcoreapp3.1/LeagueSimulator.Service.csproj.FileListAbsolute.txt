@@ -1,0 +1,14 @@
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Service.deps.json
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Service.dll
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Service.pdb
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Data.dll
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Repository.dll
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Data.pdb
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\bin\Debug\netcoreapp3.1\LeagueSimulator.Repository.pdb
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.csprojAssemblyReference.cache
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.AssemblyInfoInputs.cache
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.AssemblyInfo.cs
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.csproj.CoreCompileInputs.cache
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.csproj.CopyComplete
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.dll
+C:\Users\yunus\source\repos\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.Service\obj\Debug\netcoreapp3.1\LeagueSimulator.Service.pdb

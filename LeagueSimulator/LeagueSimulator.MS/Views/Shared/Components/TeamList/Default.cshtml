@@ -1,0 +1,35 @@
+﻿@model LeagueSimulator.Data.ResponseModel.ReturnParameterModel<List<LeagueSimulator.Data.Entities.Team>>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @if (Model.Success == true)
+    {
+        <h3 class="text-center">Teams</h3>
+        <table class="table table-sm table-bordered table-hover mt-3">
+            <tr>
+                <th>Teams Name</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Chance</th>
+
+            </tr>
+            @foreach (var item in Model.Model)
+            {
+                <tr>
+                    <td>@item.TeamName</td>
+                    <td>@item.Attack</td>
+                    <td>@item.Defense</td>
+                    <td>@item.Chance</td>
+
+
+
+
+                </tr>
+            }
+
+        </table>
+    }
+</body>
+</html>
