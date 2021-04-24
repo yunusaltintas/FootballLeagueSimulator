@@ -36,6 +36,7 @@ namespace LeagueSimulator.Repository
         public List<T> TFindAsync(Expression<Func<T, bool>> predicate)
         {
             var result=_db.Where(predicate).ToList();
+                        
             return result;
         }
 

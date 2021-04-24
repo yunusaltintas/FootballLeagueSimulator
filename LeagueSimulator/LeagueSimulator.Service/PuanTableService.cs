@@ -15,7 +15,9 @@ namespace LeagueSimulator.Service
         private readonly IBaseRepository<PuanTable> _puanTableRepository;
         private readonly IBaseRepository<WeeklyResult> _weeklyResultRepository;
 
-        public PuanTableService(IBaseRepository<PuanTable> puanTableRepository,IBaseRepository<WeeklyResult> weeklyResultRepository)
+        public PuanTableService(
+            IBaseRepository<PuanTable> puanTableRepository,
+            IBaseRepository<WeeklyResult> weeklyResultRepository)
         {
             _puanTableRepository = puanTableRepository;
             _weeklyResultRepository = weeklyResultRepository;
@@ -70,12 +72,12 @@ namespace LeagueSimulator.Service
                 hometeam.Averaj += hometeam.GoalsScored - hometeam.GoalsConceded;
                 awayteam.Averaj += awayteam.GoalsScored - awayteam.GoalsConceded;
 
-                //await _puanTableRepository.TAddAsync(hometeam);
-                await _puanTableRepository.TAddAsync(awayteam);
+                await _puanTableRepository.TUpdateAsync(hometeam);
+                await _puanTableRepository.TUpdateAsync(awayteam);
 
 
             }
-        
+
             return null;
         }
     }

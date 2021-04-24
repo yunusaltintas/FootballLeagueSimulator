@@ -18,8 +18,9 @@ namespace LeagueSimulator.MS.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int week)
         {
-            
-            var result =await _puanTableServive.GetPuanTable();
+           
+
+            var result = await _puanTableServive.GetPuanTable();
             return View(result);
         }
     }

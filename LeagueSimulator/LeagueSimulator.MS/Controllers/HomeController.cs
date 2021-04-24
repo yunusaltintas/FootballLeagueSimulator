@@ -33,7 +33,8 @@ namespace LeagueSimulator.MS.Controllers
             {
                 //_nextWeekService.DrawLots();
             }
-            //_puanTableServive.AddResultsToTable(week);
+
+
             return View();
         }
         [HttpGet]
@@ -53,13 +54,17 @@ namespace LeagueSimulator.MS.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult NextWeek()
+        public async Task<IActionResult> NextWeekAsync()
         {
-            if (week<6)
+            if (week < 6)
             {
                 week++;
             }
-            
+            if (week > 0 && week < 6)
+            {
+                await _puanTableServive.AddResultsToTable(week);
+            }
+
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -74,7 +79,7 @@ namespace LeagueSimulator.MS.Controllers
             {
                 return View(addTeamViewModel);
             }
-           
+
             var result = _nextWeekService.AddTeamAsync(addTeamViewModel);
             return RedirectToAction("AddTeam");
         }
