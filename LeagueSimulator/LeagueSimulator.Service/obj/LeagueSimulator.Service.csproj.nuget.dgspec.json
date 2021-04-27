@@ -4,14 +4,14 @@
     "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Service\\LeagueSimulator.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj": {
+    "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Core\\LeagueSimulator.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj",
-        "projectName": "LeagueSimulator.Data",
-        "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj",
+        "projectUniqueName": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Core\\LeagueSimulator.Core.csproj",
+        "projectName": "LeagueSimulator.Core",
+        "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Core\\LeagueSimulator.Core.csproj",
         "packagesPath": "C:\\Users\\yunus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\obj\\",
+        "outputPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,26 +43,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "FluentValidation.AspNetCore": {
-              "target": "Package",
-              "version": "[10.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.5, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -74,9 +54,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -85,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj": {
+    "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj",
-        "projectName": "LeagueSimulator.Repository",
-        "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj",
+        "projectName": "LeagueSimulator.Data",
+        "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj",
         "packagesPath": "C:\\Users\\yunus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\obj\\",
+        "outputPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -113,8 +90,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj": {
-                "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj"
+              "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Core\\LeagueSimulator.Core.csproj": {
+                "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Core\\LeagueSimulator.Core.csproj"
               }
             }
           }
@@ -129,7 +106,21 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.5, )"
             }
@@ -186,9 +177,6 @@
             "projectReferences": {
               "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj": {
                 "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj"
-              },
-              "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj": {
-                "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj"
               }
             }
           }

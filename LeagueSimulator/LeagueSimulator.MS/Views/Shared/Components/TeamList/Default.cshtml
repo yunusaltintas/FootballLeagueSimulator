@@ -1,35 +1,35 @@
-﻿@model LeagueSimulator.Data.ResponseModel.ReturnParameterModel<List<LeagueSimulator.Data.Entities.Team>>
+﻿@model IEnumerable<TeamDTO>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
-    @if (Model.Success == true)
-    {
-        <h3 class="text-center">Teams</h3>
-        <table class="table table-sm table-bordered table-hover mt-3">
+
+    <h3 class="text-center">Teams</h3>
+    <table class="table table-sm table-bordered table-hover mt-3">
+        <tr>
+            <th>Teams Name</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Chance</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>Teams Name</th>
-                <th>Attack</th>
-                <th>Defense</th>
-                <th>Chance</th>
+                <td>@item.Name</td>
+                <td>@item.Attack</td>
+                <td>@item.Defense</td>
+                <td>@item.Chance</td>
+                <td><a asp-action="AddTeam" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-info">Update</a></td>
+                
+
+
 
             </tr>
-            @foreach (var item in Model.Model)
-            {
-                <tr>
-                    <td>@item.TeamName</td>
-                    <td>@item.Attack</td>
-                    <td>@item.Defense</td>
-                    <td>@item.Chance</td>
+        }
 
+    </table>
 
-
-
-                </tr>
-            }
-
-        </table>
-    }
 </body>
 </html>

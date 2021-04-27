@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "LeagueSimulator.Service/1.0.0": {
         "dependencies": {
-          "LeagueSimulator.Data": "1.0.0",
-          "LeagueSimulator.Repository": "1.0.0"
+          "LeagueSimulator.Data": "1.0.0"
         },
         "runtime": {
           "LeagueSimulator.Service.dll": {}
@@ -1033,23 +1032,20 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "LeagueSimulator.Core/1.0.0": {
+        "runtime": {
+          "LeagueSimulator.Core.dll": {}
+        }
+      },
       "LeagueSimulator.Data/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "10.0.4",
+          "LeagueSimulator.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
         },
         "runtime": {
           "LeagueSimulator.Data.dll": {}
-        }
-      },
-      "LeagueSimulator.Repository/1.0.0": {
-        "dependencies": {
-          "LeagueSimulator.Data": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.5"
-        },
-        "runtime": {
-          "LeagueSimulator.Repository.dll": {}
         }
       }
     }
@@ -1739,12 +1735,12 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "LeagueSimulator.Data/1.0.0": {
+    "LeagueSimulator.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "LeagueSimulator.Repository/1.0.0": {
+    "LeagueSimulator.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

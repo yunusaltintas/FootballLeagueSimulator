@@ -1,0 +1,9 @@
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\bin\Debug\netcoreapp3.1\LeagueSimulator.Core.deps.json
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\bin\Debug\netcoreapp3.1\LeagueSimulator.Core.dll
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\bin\Debug\netcoreapp3.1\LeagueSimulator.Core.pdb
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\obj\Debug\netcoreapp3.1\LeagueSimulator.Core.csprojAssemblyReference.cache
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\obj\Debug\netcoreapp3.1\LeagueSimulator.Core.AssemblyInfoInputs.cache
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\obj\Debug\netcoreapp3.1\LeagueSimulator.Core.AssemblyInfo.cs
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\obj\Debug\netcoreapp3.1\LeagueSimulator.Core.csproj.CoreCompileInputs.cache
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\obj\Debug\netcoreapp3.1\LeagueSimulator.Core.dll
+C:\Users\yunus\source\repos\LeagueSimulator\LeagueSimulator.Core\obj\Debug\netcoreapp3.1\LeagueSimulator.Core.pdb

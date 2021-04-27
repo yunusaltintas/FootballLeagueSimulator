@@ -1,7 +1,11 @@
-﻿using LeagueSimulator.Data.Entities;
-using LeagueSimulator.Repository;
+﻿
+using AutoMapper;
+using LeagueSimulator.Core.Entities;
+using LeagueSimulator.Core.IServices;
+using LeagueSimulator.Data.DTOs;
 using LeagueSimulator.Service;
 using Microsoft.AspNetCore.Mvc;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +13,20 @@ using System.Threading.Tasks;
 
 namespace LeagueSimulator.MS.ViewComponents
 {
-    public class TeamList:ViewComponent
+    public class TeamList : ViewComponent
     {
-        private readonly INextWeekService _nextWeekService;
+        private readonly IBaseService<Team> _baseService;
+        private readonly IMapper _mapper;
 
-        public TeamList(INextWeekService nextWeekService)
+        public TeamList(IBaseService<Team> baseService, IMapper mapper)
         {
-            _nextWeekService = nextWeekService;
+            _baseService = baseService;
+            _mapper = mapper;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-           var result= await _nextWeekService.GetTeamList();
+            var TeamList = await _baseService.GetAllAsync();
+            var result = _mapper.Map<IEnumerable<TeamDTO>>(TeamList);
             return View(result);
         }
     }

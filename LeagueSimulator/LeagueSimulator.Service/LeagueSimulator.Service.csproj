@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LeagueSimulator.Data\LeagueSimulator.Data.csproj" />
-    <ProjectReference Include="..\LeagueSimulator.Repository\LeagueSimulator.Repository.csproj" />
   </ItemGroup>
 
 </Project>

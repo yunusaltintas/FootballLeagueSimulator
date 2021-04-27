@@ -1,4 +1,4 @@
-﻿@model LeagueSimulator.Data.ViewModels.AddTeamViewModel
+﻿@model TeamDTO
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
@@ -6,9 +6,9 @@
 <body>
     <form asp-action="AddTeam" asp-controller="Home" method="post" class="p-4 w-25 mx-auto mt-5 shadow">
         <div class="form-group">
-            <label asp-for="TeamName">Team Name:</label>
-            <input asp-for="TeamName" type="text" class="form-control" placeholder="Team Name" />
-            <span asp-validation-for="TeamName" class="text-danger"></span>
+            <label asp-for="Name">Team Name:</label>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Team Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Attack">Attack:</label>
@@ -29,7 +29,7 @@
 
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-block btn-info">Add Team</button>
+            <button type="submit" class="btn btn-block btn-info">Update Team</button>
         </div>
     </form>
 </body>

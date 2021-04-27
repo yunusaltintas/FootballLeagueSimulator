@@ -1,11 +1,16 @@
-﻿using LeagueSimulator.Data.Entities;
-using LeagueSimulator.Data.ViewModels;
-using LeagueSimulator.Service;
+﻿
+using AutoMapper;
+using LeagueSimulator.Core.Entities;
+using LeagueSimulator.Core.IServices;
+using LeagueSimulator.Data.DTOs;
+using LeagueSimulator.MS.Filters;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,14 +18,19 @@ namespace LeagueSimulator.MS.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly INextWeekService _nextWeekService;
-        private readonly IPuanTableServive _puanTableServive;
-        static int week;
-        public HomeController(INextWeekService nextWeekService, IPuanTableServive puanTableServive)
+        private readonly IWeeklyResultService _weeklyResultService;
+        private readonly IMapper _mapper;
+        private readonly IBaseService<Team> _baseService;
+        private readonly IPuanTableService _puanTableService;
+
+        public HomeController(IWeeklyResultService weeklyResultService,IMapper mapper,IBaseService<Team> baseService,IPuanTableService puanTableService )
         {
-            _nextWeekService = nextWeekService;
-            _puanTableServive = puanTableServive;
+            _weeklyResultService = weeklyResultService;
+            _mapper = mapper;
+            _baseService = baseService;
+            _puanTableService = puanTableService;
         }
+        static int week;
         static HomeController()
         {
             week = 0;
@@ -29,12 +39,6 @@ namespace LeagueSimulator.MS.Controllers
         public IActionResult Index()
         {
             ViewBag.week = week;
-            if (week == 0)
-            {
-                //_nextWeekService.DrawLots();
-            }
-
-
             return View();
         }
         [HttpGet]
@@ -44,7 +48,6 @@ namespace LeagueSimulator.MS.Controllers
 
             return View();
         }
-        [Route("/Error")]
         [HttpGet]
         public IActionResult Error()
         {
@@ -56,32 +59,61 @@ namespace LeagueSimulator.MS.Controllers
         [HttpGet]
         public async Task<IActionResult> NextWeekAsync()
         {
-            if (week < 6)
+            if (week >= 0 && week <= 5)
             {
                 week++;
-            }
-            if (week > 0 && week < 6)
-            {
-                await _puanTableServive.AddResultsToTable(week);
+                await  _weeklyResultService.PlayGameAsync(week);
+                await _puanTableService.AddResultsToTableAsync(week);
             }
 
             return RedirectToAction("Index");
         }
-        [HttpGet]
-        public IActionResult AddTeam()
+
+        public async Task<IActionResult> PlayAll()
         {
+            for (int week = 0; week <= 6; week++)
+            {
+                await _weeklyResultService.PlayGameAsync(week);
+                await _puanTableService.AddResultsToTableAsync(week);
+            }
+
+            return RedirectToAction("Index");
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> AddTeamAsync(int? id)
+        {
+            if (id.HasValue)
+            {
+                var find = await _baseService.SingleOrDefaultAsync(x => x.Id == id);
+                return View(_mapper.Map<TeamDTO>(find));
+            }
             return View();
         }
+
+        [ValidationFilter]
         [HttpPost]
-        public IActionResult AddTeam(AddTeamViewModel addTeamViewModel)
+        public IActionResult AddTeamAsync(TeamDTO teamDTO)
         {
             if (!ModelState.IsValid)
             {
-                return View(addTeamViewModel);
+                return View(teamDTO);
             }
+            var team=_mapper.Map<Team>(teamDTO);
+            if (team.Id==0)
+            {
+                return View();
 
-            var result = _nextWeekService.AddTeamAsync(addTeamViewModel);
-            return RedirectToAction("AddTeam");
+            }
+            _baseService.Update(team);
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Reset()
+        {
+            await _puanTableService.Reset();
+            week = 0;
+            return RedirectToAction("Index");
         }
 
 

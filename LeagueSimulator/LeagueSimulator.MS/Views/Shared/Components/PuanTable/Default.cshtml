@@ -1,12 +1,11 @@
-﻿@model LeagueSimulator.Data.ResponseModel.ReturnParameterModel<List<LeagueSimulator.Data.Entities.PuanTable>>
+﻿@model List<PuanTableWithTeamDTO>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
 
-    @if (Model.Success == true)
-    {
+   
         <h3 class="text-center">European Super League Puan Table</h3>
         <table class="table table-sm table-bordered table-hover mt-3">
             <tr>
@@ -19,10 +18,10 @@
                 <th>GC</th>
                 <th>Averaj</th>
             </tr>
-            @foreach (var item in Model.Model)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Teams.TeamName</td>
+                    <td>@item.Team.Name</td>
                     <td>@item.Point</td>
                     <td>@item.Win</td>
                     <td>@item.Draw</td>
@@ -37,6 +36,6 @@
             }
 
         </table>
-    }
+    
 </body>
 </html>

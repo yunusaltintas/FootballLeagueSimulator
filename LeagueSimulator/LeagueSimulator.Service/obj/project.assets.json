@@ -1521,11 +1521,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "LeagueSimulator.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/LeagueSimulator.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LeagueSimulator.Core.dll": {}
+        }
+      },
       "LeagueSimulator.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "FluentValidation.AspNetCore": "10.0.4",
+          "LeagueSimulator.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
         },
@@ -1534,23 +1545,6 @@
         },
         "runtime": {
           "bin/placeholder/LeagueSimulator.Data.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "LeagueSimulator.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "LeagueSimulator.Data": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.5"
-        },
-        "compile": {
-          "bin/placeholder/LeagueSimulator.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LeagueSimulator.Repository.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -5818,21 +5812,20 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "LeagueSimulator.Core/1.0.0": {
+      "type": "project",
+      "path": "../LeagueSimulator.Core/LeagueSimulator.Core.csproj",
+      "msbuildProject": "../LeagueSimulator.Core/LeagueSimulator.Core.csproj"
+    },
     "LeagueSimulator.Data/1.0.0": {
       "type": "project",
       "path": "../LeagueSimulator.Data/LeagueSimulator.Data.csproj",
       "msbuildProject": "../LeagueSimulator.Data/LeagueSimulator.Data.csproj"
-    },
-    "LeagueSimulator.Repository/1.0.0": {
-      "type": "project",
-      "path": "../LeagueSimulator.Repository/LeagueSimulator.Repository.csproj",
-      "msbuildProject": "../LeagueSimulator.Repository/LeagueSimulator.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "LeagueSimulator.Data >= 1.0.0",
-      "LeagueSimulator.Repository >= 1.0.0"
+      "LeagueSimulator.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5869,9 +5862,6 @@
           "projectReferences": {
             "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj": {
               "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Data\\LeagueSimulator.Data.csproj"
-            },
-            "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj": {
-              "projectPath": "C:\\Users\\yunus\\source\\repos\\GİT\\FootballLeagueSimulator\\LeagueSimulator\\LeagueSimulator.Repository\\LeagueSimulator.Repository.csproj"
             }
           }
         }
