@@ -5,7 +5,7 @@
 <body>
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-md-5">
             @await Component.InvokeAsync("PuanTable", new { week = ViewBag.week }) 
         </div>
         <div class="col-md-4">
@@ -13,10 +13,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-10 ">
+        <div class="col-md-5 ">
             <a asp-action="PlayAll" asp-controller="Home" class=" btn btn-warning">Play All</a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-7">
             <a asp-action="NextWeek" asp-controller="Home" class=" btn btn-info">Next Week</a>
         </div>
     </div>

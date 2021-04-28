@@ -4,31 +4,54 @@
     <title></title>
 </head>
 <body>
- 
-        <h3 class="text-center">Match Results</h3>
-        <table class="table table-sm table-bordered table-hover mt-3">
 
-            <tr class="text-center">@(ViewBag.wweek). Week Match Result</tr>
+    <h3 class="text-center">Match Results</h3>
+    <table class="table table-sm table-bordered table-hover mt-3">
+
+        <tr class="text-center">@(ViewBag.wweek). Week Match Result</tr>
+        <tr>
+            <th>Home Team</th>
+            <th>Goal</th>
+            <th>-</th>
+            <th>Goal</th>
+            <th>Away Team</th>
+        </tr>
+        @{ int k = 0;}
+        @foreach (var item in Model)
+        {
+
             <tr>
-                <th>Home Team</th>
-                <th>Goal</th>
-                <th>-</th>
-                <th>Goal</th>
-                <th>Away Team</th>
+                @if (k == 0)
+                {
+                    <td>@ViewBag.FirstHomeTeam</td>
+                }
+                @if (k == 1)
+                {
+                    <td>@ViewBag.SecondHomeTeam</td>
+                }
+
+                <td>@item.HomeTeamGoal</td>
+                <td>-</td>
+                <td>@item.AwayTeamGoal</td>
+
+                @if (k == 0)
+                {
+                    <td>@ViewBag.FirstAwayTeam</td>
+
+                }
+                @if (k == 1)
+                {
+                    <td>@ViewBag.SecondAwayTeam</td>
+                }
+
+
+                @{k++; }
+
+
             </tr>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Team.Name</td>
-                    <td>@item.HomeTeamGoal</td>
-                    <td>-</td>
-                    <td>@item.AwayTeamGoal</td>
-                    <td>@item.Team.Name</td>
-                </tr>
-            }
+        }
+    </table>
 
-        </table>
-    
 </body>
 </html>

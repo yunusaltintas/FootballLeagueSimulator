@@ -30,15 +30,15 @@ namespace LeagueSimulator.MS.Controllers
             _baseService = baseService;
             _puanTableService = puanTableService;
         }
-        static int week;
+        static int staticweek;
         static HomeController()
         {
-            week = 0;
+            staticweek = 0;
         }
 
         public IActionResult Index()
         {
-            ViewBag.week = week;
+            ViewBag.week = staticweek;
             return View();
         }
         [HttpGet]
@@ -59,11 +59,11 @@ namespace LeagueSimulator.MS.Controllers
         [HttpGet]
         public async Task<IActionResult> NextWeekAsync()
         {
-            if (week >= 0 && week <= 5)
+            if (staticweek >= 0 && staticweek <= 5)
             {
-                week++;
-                await  _weeklyResultService.PlayGameAsync(week);
-                await _puanTableService.AddResultsToTableAsync(week);
+                staticweek++;
+                await  _weeklyResultService.PlayGameAsync(staticweek);
+                await _puanTableService.AddResultsToTableAsync(staticweek);
             }
 
             return RedirectToAction("Index");
@@ -71,10 +71,15 @@ namespace LeagueSimulator.MS.Controllers
 
         public async Task<IActionResult> PlayAll()
         {
+            if (staticweek==6)
+            {
+                return RedirectToAction("Index");
+            }
             for (int week = 0; week <= 6; week++)
             {
                 await _weeklyResultService.PlayGameAsync(week);
                 await _puanTableService.AddResultsToTableAsync(week);
+                staticweek = week;
             }
 
             return RedirectToAction("Index");
@@ -112,7 +117,7 @@ namespace LeagueSimulator.MS.Controllers
         public async Task<IActionResult> Reset()
         {
             await _puanTableService.Reset();
-            week = 0;
+            staticweek = 0;
             return RedirectToAction("Index");
         }
 
