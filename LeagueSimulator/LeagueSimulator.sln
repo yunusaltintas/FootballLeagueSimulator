@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueSimulator.MS", "LeagueSimulator.MS\LeagueSimulator.MS.csproj", "{67D4727A-C055-402D-8F30-8D514174ED84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueSimulator.Data", "LeagueSimulator.Data\LeagueSimulator.Data.csproj", "{048BCA85-7B9C-4196-B373-78320BE3994D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueSimulator.Data", "LeagueSimulator.Data\LeagueSimulator.Data.csproj", "{048BCA85-7B9C-4196-B373-78320BE3994D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueSimulator.Core", "LeagueSimulator.Core\LeagueSimulator.Core.csproj", "{47F79332-6789-4BC0-8E07-BCFC45B20F93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueSimulator.Core", "LeagueSimulator.Core\LeagueSimulator.Core.csproj", "{47F79332-6789-4BC0-8E07-BCFC45B20F93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueSimulator.Service", "LeagueSimulator.Service\LeagueSimulator.Service.csproj", "{FC59C91A-CC96-4062-9994-9D6269EB8FE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueSimulator.Service", "LeagueSimulator.Service\LeagueSimulator.Service.csproj", "{FC59C91A-CC96-4062-9994-9D6269EB8FE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

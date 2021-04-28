@@ -810,3 +810,4 @@ C:\Users\yunus\source\repos\GİT\FootballLeagueSimulator\LeagueSimulator\LeagueS
 C:\Users\yunus\source\repos\GİT\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.MS\obj\Debug\net5.0\ref\LeagueSimulator.MS.dll
 C:\Users\yunus\source\repos\GİT\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.MS\obj\Debug\net5.0\LeagueSimulator.MS.pdb
 C:\Users\yunus\source\repos\GİT\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.MS\obj\Debug\net5.0\LeagueSimulator.MS.genruntimeconfig.cache
+C:\Users\yunus\source\repos\GİT\FootballLeagueSimulator\LeagueSimulator\LeagueSimulator.MS\obj\Debug\net5.0\Razor\Views\Shared\Components\PredictionCamp\Default.cshtml.g.cs

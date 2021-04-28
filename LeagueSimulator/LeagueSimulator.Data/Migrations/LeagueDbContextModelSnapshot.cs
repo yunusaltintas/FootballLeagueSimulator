@@ -18,6 +18,57 @@ namespace LeagueSimulator.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("LeagueSimulator.Core.Entities.PredictionChamp", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Prediction")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(18,2)")
+                        .HasDefaultValue(0m);
+
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId")
+                        .IsUnique();
+
+                    b.ToTable("PredictionChamps");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Prediction = 0m,
+                            TeamId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Prediction = 0m,
+                            TeamId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Prediction = 0m,
+                            TeamId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Prediction = 0m,
+                            TeamId = 4
+                        });
+                });
+
             modelBuilder.Entity("LeagueSimulator.Core.Entities.PuanTable", b =>
                 {
                     b.Property<int>("Id")
@@ -335,6 +386,17 @@ namespace LeagueSimulator.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LeagueSimulator.Core.Entities.PredictionChamp", b =>
+                {
+                    b.HasOne("LeagueSimulator.Core.Entities.Team", "Team")
+                        .WithOne("PredictionChamp")
+                        .HasForeignKey("LeagueSimulator.Core.Entities.PredictionChamp", "TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("LeagueSimulator.Core.Entities.PuanTable", b =>
                 {
                     b.HasOne("LeagueSimulator.Core.Entities.Team", "Team")
@@ -359,6 +421,8 @@ namespace LeagueSimulator.Data.Migrations
 
             modelBuilder.Entity("LeagueSimulator.Core.Entities.Team", b =>
                 {
+                    b.Navigation("PredictionChamp");
+
                     b.Navigation("PuanTable");
 
                     b.Navigation("WeeklyResults");

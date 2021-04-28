@@ -11,6 +11,7 @@ namespace LeagueSimulator.Core.Entities
         public int Defense { get; set; }
         public int Chance { get; set; }
         public virtual PuanTable PuanTable { get; set; }
+        public virtual PredictionChamp PredictionChamp { get; set; }
         public virtual ICollection<WeeklyResult> WeeklyResults { get; set; }
 
     }

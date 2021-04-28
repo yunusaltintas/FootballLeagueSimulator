@@ -25,6 +25,9 @@ namespace LeagueSimulator.Data.DTOs.Mapping
             CreateMap<WeeklyResultWithTeamDTO, WeeklyResult>();
             CreateMap<WeeklyResult, WeeklyResultWithTeamDTO>();
 
+            CreateMap<PredictionChamp, PredictionChampWithTeamDTO>();
+            CreateMap<PredictionChampWithTeamDTO, PredictionChamp>();
+
         }
 
     }

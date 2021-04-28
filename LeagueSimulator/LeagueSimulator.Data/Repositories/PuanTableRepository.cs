@@ -24,6 +24,7 @@ namespace LeagueSimulator.Data.Repositories
         public async Task<List<PuanTable>> GetPuanTableWithTeamNameAsync()
         {
             return await _dbPuanTable.Include(x=>x.Team).OrderByDescending(x=>x.Point).ToListAsync(); 
+            
         }
     }
 }

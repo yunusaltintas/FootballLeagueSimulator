@@ -46,10 +46,12 @@ namespace LeagueSimulator.MS
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IPuanTableRepository, PuanTableRepository>();
             services.AddScoped<IWeeklyResultRepository, WeeklyResultRepository>();
+            services.AddScoped<IPredictionCampRepository, PredictionCampRepository>();
 
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped<IPuanTableService, PuanTableService>();
             services.AddScoped<IWeeklyResultService, WeeklyResultService>();
+            services.AddScoped<IPredictionCampService,PredictionCampService>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

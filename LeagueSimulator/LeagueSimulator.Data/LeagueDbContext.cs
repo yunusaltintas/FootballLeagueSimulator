@@ -17,16 +17,19 @@ namespace LeagueSimulator.Data
         public DbSet<PuanTable> PuanTables { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<WeeklyResult> WeeklyResults { get; set; }
+        public DbSet<PredictionChamp> PredictionChamps { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new TeamBuilder())
                 .ApplyConfiguration(new WeeklyResultBuilder())
-                .ApplyConfiguration(new PuanTableBuilder());
+                .ApplyConfiguration(new PuanTableBuilder())
+                .ApplyConfiguration(new PredictionChampBuilder());
 
             modelBuilder.ApplyConfiguration(new TeamSeed())
                 .ApplyConfiguration(new PuanTableSeed())
-                .ApplyConfiguration(new WeeklyResultSeed());
+                .ApplyConfiguration(new WeeklyResultSeed())
+                .ApplyConfiguration(new PredictionChampSeed());
         }
 
 

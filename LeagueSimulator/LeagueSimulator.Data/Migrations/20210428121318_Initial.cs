@@ -23,6 +23,26 @@ namespace LeagueSimulator.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PredictionChamps",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Prediction = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 0m),
+                    TeamId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PredictionChamps", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PredictionChamps_Teams_TeamId",
+                        column: x => x.TeamId,
+                        principalTable: "Teams",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PuanTables",
                 columns: table => new
                 {
@@ -67,16 +87,8 @@ namespace LeagueSimulator.Data.Migrations
                         name: "FK_WeeklyResults_Teams_HomeTeamId",
                         column: x => x.HomeTeamId,
                         principalTable: "Teams",
-                        principalColumn: "Id"
-                        //onDelete: ReferentialAction.Cascade
-                        );
-                    table.ForeignKey(
-                        name: "FK_WeeklyResults_Teams_AwayTeamId",
-                        column: x => x.AwayTeamId,
-                        principalTable: "Teams",
-                        principalColumn: "Id"
-                        //onDelete: ReferentialAction.Cascade
-                        );
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -91,14 +103,25 @@ namespace LeagueSimulator.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "PredictionChamps",
+                columns: new[] { "Id", "TeamId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 4, 4 },
+                    { 2, 2 },
+                    { 3, 3 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "PuanTables",
                 columns: new[] { "Id", "TeamId" },
                 values: new object[,]
                 {
                     { 1, 1 },
+                    { 4, 4 },
                     { 2, 2 },
-                    { 3, 3 },
-                    { 4, 4 }
+                    { 3, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -106,27 +129,43 @@ namespace LeagueSimulator.Data.Migrations
                 columns: new[] { "Id", "AwayTeamId", "HomeTeamId", "Week" },
                 values: new object[,]
                 {
-                    { 1, 2, 1, 1 },
-                    { 9, 3, 1, 5 },
-                    { 11, 4, 1, 6 },
-                    { 3, 3, 2, 2 },
-                    { 6, 4, 2, 3 },
-                    { 8, 1, 2, 4 },
-                    { 2, 4, 3, 1 },
-                    { 5, 1, 3, 3 },
-                    { 12, 2, 3, 6 },
                     { 4, 1, 4, 2 },
+                    { 12, 2, 3, 6 },
+                    { 5, 1, 3, 3 },
+                    { 2, 4, 3, 1 },
+                    { 8, 1, 2, 4 },
+                    { 6, 4, 2, 3 },
+                    { 3, 3, 2, 2 },
+                    { 11, 4, 1, 6 },
+                    { 9, 3, 1, 5 },
+                    { 1, 2, 1, 1 },
                     { 7, 3, 4, 4 },
                     { 10, 2, 4, 5 }
                 });
 
-      
+            migrationBuilder.CreateIndex(
+                name: "IX_PredictionChamps_TeamId",
+                table: "PredictionChamps",
+                column: "TeamId",
+                unique: true);
 
-    
+            migrationBuilder.CreateIndex(
+                name: "IX_PuanTables_TeamId",
+                table: "PuanTables",
+                column: "TeamId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WeeklyResults_HomeTeamId",
+                table: "WeeklyResults",
+                column: "HomeTeamId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "PredictionChamps");
+
             migrationBuilder.DropTable(
                 name: "PuanTables");
 

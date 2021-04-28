@@ -6,11 +6,15 @@
     <div class="row">
 
         <div class="col-md-5">
-            @await Component.InvokeAsync("PuanTable", new { week = ViewBag.week }) 
+            @await Component.InvokeAsync("PuanTable", new { week = ViewBag.week })
         </div>
         <div class="col-md-4">
             @await Component.InvokeAsync("WeeklyResult", new { week = ViewBag.week })
         </div>
+        <div class="col-md-3">
+            @await Component.InvokeAsync("PredictionCamp", new { week = ViewBag.week })
+        </div>
+
     </div>
     <div class="row">
         <div class="col-md-5 ">

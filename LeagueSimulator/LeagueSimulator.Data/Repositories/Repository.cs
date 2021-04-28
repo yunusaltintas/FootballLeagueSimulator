@@ -64,5 +64,10 @@ namespace LeagueSimulator.Data.Repository
 
             return entity;
         }
+
+        public IQueryable<TEntity> Query()
+        {
+            return  _dbSet.AsQueryable();
+        }
     }
 }

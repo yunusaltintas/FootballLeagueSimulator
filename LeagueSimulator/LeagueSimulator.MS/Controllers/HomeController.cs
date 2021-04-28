@@ -22,13 +22,15 @@ namespace LeagueSimulator.MS.Controllers
         private readonly IMapper _mapper;
         private readonly IBaseService<Team> _baseService;
         private readonly IPuanTableService _puanTableService;
+        private readonly IPredictionCampService _predictionCampService;
 
-        public HomeController(IWeeklyResultService weeklyResultService,IMapper mapper,IBaseService<Team> baseService,IPuanTableService puanTableService )
+        public HomeController(IWeeklyResultService weeklyResultService,IMapper mapper,IBaseService<Team> baseService,IPuanTableService puanTableService, IPredictionCampService predictionCampService )
         {
             _weeklyResultService = weeklyResultService;
             _mapper = mapper;
             _baseService = baseService;
             _puanTableService = puanTableService;
+            _predictionCampService = predictionCampService;
         }
         static int staticweek;
         static HomeController()
@@ -61,9 +63,10 @@ namespace LeagueSimulator.MS.Controllers
         {
             if (staticweek >= 0 && staticweek <= 5)
             {
-                staticweek++;
+                staticweek++;                
                 await  _weeklyResultService.PlayGameAsync(staticweek);
                 await _puanTableService.AddResultsToTableAsync(staticweek);
+                await _predictionCampService.PredictionChampAsync(staticweek);
             }
 
             return RedirectToAction("Index");
@@ -80,7 +83,7 @@ namespace LeagueSimulator.MS.Controllers
                 await _weeklyResultService.PlayGameAsync(week);
                 await _puanTableService.AddResultsToTableAsync(week);
                 staticweek = week;
-            }
+            } 
 
             return RedirectToAction("Index");
         }

@@ -12,6 +12,8 @@ namespace LeagueSimulator.Core.IUnitOfWorks
 
         IWeeklyResultRepository WeeklyResultRepositories { get; }
 
+        IPredictionCampRepository PredictionCampRepositories { get; }
+
         Task CommitAsync();
 
         void Commit();

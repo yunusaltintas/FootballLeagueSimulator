@@ -13,9 +13,12 @@ namespace LeagueSimulator.Data.UnitOfWorksBase
         private readonly LeagueDbContext _context;
         private  PuanTableRepository _puanTableRepository;
         private  WeeklyResultRepository _weeklyResultRepository;
+        private PredictionCampRepository _predictionCampRepository;
         public IPuanTableRepository PuanTableRepositories => _puanTableRepository = _puanTableRepository ?? new PuanTableRepository(_context);
 
         public IWeeklyResultRepository WeeklyResultRepositories => _weeklyResultRepository = _weeklyResultRepository ?? new WeeklyResultRepository(_context);
+
+        public IPredictionCampRepository PredictionCampRepositories => _predictionCampRepository = _predictionCampRepository ?? new PredictionCampRepository(_context);
 
         public UnitOfWork(LeagueDbContext leagueDbContext)
         {
